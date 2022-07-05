@@ -161,7 +161,7 @@ def Ex_invert_diag(arr, symbl):
         f = False
         flag = -1
         h = j
-        for i in range(10 - j, 0, -1):
+        for i in range(9, j - 1, -1):
             if arr[h][i] == symbl and not f:
                 f = True
                 flag = i
@@ -179,6 +179,7 @@ def Ex_invert_diag(arr, symbl):
 
 
 array = [[j for j in range(i - 10, i)] for i in range(10, 101, 10)]
+
 while True:
     Pole(array)
     CP_Move(array)
