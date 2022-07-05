@@ -21,11 +21,19 @@ def Pole(arr):
 
 def Man_Move(arr):
     print("Select field number: ", end=' ')
-    move = int(input())
+    move = Ex_move()
     while move not in [i for i in range(100)] or (arr[move // 10][move % 10] in ['X', 'O']):
         print("Please select another: ", end=' ')
-        move = int(input())
+        move = Ex_move()
     arr[move // 10][move % 10] = 'X'
+
+
+def Ex_move():
+    move = input()
+    while not move.isdigit():
+        print('Enter the number: ', end='')
+        move = input()
+    return int(move)
 
 
 def CP_Move(arr):
