@@ -58,14 +58,11 @@ class Movie:
 
     def schedule(self):  # -> Generator[datetime, None, None]:
         ans = []
-        start_1 = self.data_int(self.dates[0][0])
-        end_1 = self.data_int(self.dates[0][1])
-        start_2 = self.data_int(self.dates[1][0])
-        end_2 = self.data_int(self.dates[1][1])
-        ex_1 = self.ex_date(start_1, end_1)
-        ex_2 = self.ex_date(start_2, end_2)
-        ans += self.date_schedule(ex_1, start_1, end_1)
-        ans += self.date_schedule(ex_2, start_2, end_2)
+        for i in range(len(self.dates)):
+            start = self.data_int(self.dates[i][0])
+            end = self.data_int(self.dates[i][1])
+            ex = self.ex_date(start, end)
+            ans += self.date_schedule(ex, start, end)
         return ans
 
 
